@@ -5,7 +5,6 @@ void main() {
   runApp(const MyApp());
 }
 
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
@@ -20,8 +19,8 @@ class HomePage extends StatelessWidget {
   const HomePage({super.key});
   @override
   Widget build(BuildContext context){
-    return Material(
-      child: const Center(
+    return const Material(
+      child: Center(
         child: Text('Erikão'),
       ),
     );
