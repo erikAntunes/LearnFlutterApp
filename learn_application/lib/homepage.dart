@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:learn_application/home_controller.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+   HomePage({super.key});
   @override
   Widget build(BuildContext context){
-    return const Material(
-      child: Center(
-        child: Text('Erikão'),
+    var controller = context.dependOnInheritedWidgetOfExactType<HomeController>()!;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Home'),),
+      body: Center(
+        child: Text('Erikão ${controller.value}'),
       ),
+    floatingActionButton: FloatingActionButton(
+      child: Icon(Icons.add),
+      onPressed: (){
+        controller.increment();
+      },
+    ),
     );
   }
 }
